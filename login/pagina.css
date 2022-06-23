@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+           
+}
+
+.container{
+
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+}
+
+
+.cabeçalho{
+    flex-basis: 30%;
+}
+
+.cabeçalho-logo{
+    margin-bottom:40px;
+    
+}
+
+.cabeçalho-logo img{
+}
+
+.cabeçalho-menu-navegaçao{
+}
+
+
+    
+
+.cabeçalho-menu-lista{
+    list-style-type: none;
+
+
+}
+
+.cabeçalho-menu-item{
+    margin-bottom: 25px;
+}
+
+
+.cabeçalho-menu-item img{ 
+    max-width: 27px;
+    
+}
+
+.cabeçalho-menu-item a{
+    text-decoration: none;
+    font-size:22px;
+    color: black;
+    vertical-align: top;
+}
+
+
+.conteudo-principal{
+flex-basis: 60%;
+border-left: 1px solid #ddd;
+border-right: 1px solid 
+
+
+}
+
+.conteudo-principal-titulo{
+    padding: 10px 30px;
+}
+
+.conteudo-principal-formulario{
+    padding: 10px 50px;
+    border-top: 1px solid #e7ecf0;
+    border-bottom: 10px solid #e7ecf0;
+    text-align:right;
+}
+
+.conteudo-principal-formulario textarea{
+    display: block;
+    width: 100%;
+    height: 55px;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+.conteudo-principal-formulario button{
+    background-color: #1da1f2;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 15px;
+    list-style-type: none;
+}
+
+.Borboleta{
+    max-width: 50px;
+    filter: invert(44%) sepia(79%) saturate(784%) hue-rotate(154deg) brightness(97%) contrast(102%);
+    transform-origin: 0px 0px;
+    right: 100px;
+}
+
+.conteudo-principal-feed{
+    text-align: left;
+}
+    
+
+
+.conteudo-principal-lista-twitoks{
+    display: flex;
+    flex-flow: column-reverse nowrap;
+    list-style-type: none;
+
+}
+
+.conteudo-principal-twitoks{
+padding: 20px 32px;
+display: flex;
+align-items: flex-start;
+border-bottom: 10px solid #e7ecf0;
+}
+
+
+.twitok-conteudo{
+    margin-left: 15px;
+}
+
+.twitok-conteudo h2{
+    display: inline-block;
+}
+
+.twitok-conteudo span{
+    display: inline-block;
+    color: #828282;
+}
+
+.twitok-conteudo p{
+    margin-top: 15px;
+    color: #333;
+}

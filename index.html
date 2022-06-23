@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <title>Twitok</title>
+    
+</head>
+<body id="overflowMedia" style="background-color: white;">
+
+    <main>
+        <div id="homePage" style= "display: flex; height: 100%; width: 100%;">
+            <div id="containerImg">
+                <img src="imgs/imglogin.png"  id="imgLogin" alt="imagem de login">
+            </div>
+            <div id="containerLogin" style="display: flex; flex-direction: column;">
+                <div>
+                    <img src="imgs/logo.svg" class="logoImg" alt="logo borboleta">
+                </div>
+                <div>
+                    <h1>Fique por dentro de tudo que está acontecendo no mundo</h1>
+                    <h2>Inscreva-se no Twitok agora mesmo.</h2>
+                </div>
+                <div class="buttonsCenter">
+                <div id="buttonsRegisterBoxHome">
+                    <button id="registerButtonHome" type="button">Inscreva-se</button>
+                    <p style="font-size: 11px;">Ao se inscrever, você concorda com os <a href="">Termos de Serviço</a> e a <a href="">Política de Privacidade</a>, incluindo o <a href="">Uso de Cookies</a>.</p>
+                </div>
+                <div id="buttonsLoginBoxHome">
+                    <p style="font-size:larger;"><b>Já tem uma conta?</b></p>
+                    <button id="loginButtonHome" type="button">Entrar</button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+    <div id="modalLogin" style="display: none;">
+        <div class="boxModal" style="flex-direction: column;">
+
+        <div style="display: flex; flex-direction: row;">
+        <div class="backBox">
+            <button id="backButtonLogin" class="backButton" type="button">X</button>
+        </div>
+
+        <div class = "imgLogoBox">
+            <img src="imgs/logo.svg" class="logoImg" alt="logo borboleta">
+        </div>
+        </div>
+
+        <p>Entre na sua conta do <br> Twitok</p>
+
+        <div class="formUser">
+        <label for="userUsername">Nome de usuário/Login</label>
+        <input id="userUsername" type="text" name="usernameForm:user" class="formControl" placeholder="Digite seu nome de usuário ou email">
+        <label for="userSenha">Senha</label>
+            <div style="display: flex; flex-direction: row;">
+                <input id="userSenhaLogin" type="password" name="senhaForm:user" class="formControl" placeholder="Digite sua senha" >
+                <i class="far fa-eye" id="togglePasswordLogin"></i>
+            </div>
+        
+        
+        </div>
+
+        <div id="buttonsLoginBox">
+            <button id="loginButton" type="button">Entrar</button>
+            <p style="margin-top: 30px; font-size: 20px;">Não possui uma conta? <a href="#" id="registerLoginLink">Inscreva-se</a> </p>   
+        </div>
+
+        
+        </div>
+
+    </div>
+
+    <!-- #region --> 
+
+    <div id="modalRegister" style="display: none;">
+        <div class="boxModal" style=" flex-direction: column;">
+
+            <div style="display: flex; flex-direction: row;">
+            <div class="backBox">
+                <button id="backButtonRegister" class ="backButton" type="button">X</button>
+            </div>
+    
+            <div class = "imgLogoBox">
+                <img src="imgs/logo.svg" class="logoImg" alt="logo borboleta">
+            </div>
+            </div>
+    
+            <p>Crie sua conta do Twitok</p>
+    
+            <div class="formUser">
+            <label for="userUsername">Nome de usuário</label>
+            <input id="userUsername" type="text" name="usernameForm:user" class="formControl" placeholder="Digite seu nome de usuário">
+            <label for="userEmail">Email</label>
+            <input id="userEmail" type="text" name="emailForm:user" class="formControl" placeholder="Digite seu email">
+            <label for="userPassword">Senha</label>
+                <div style="display: flex; flex-direction: row;">
+                    <input id="userPassword" type="password" name="passwordForm:user" class="formControl" placeholder="Digite sua senha">
+                    <i class="far fa-eye" id="togglePassword"></i>
+                </div>
+                
+                <div style="display: flex; flex-direction: row;">
+                     <input id="userValidationPassword" type="password" name="passwordValidationForm:user" class="formControl" placeholder="Confirme sua senha">
+                     <i class="far fa-eye" id="toggleValidationPassword"></i>
+                </div>
+    
+            <div id="buttonsRegisterBox">
+                <button id="registerButton" type="button">Inscreva-se</button>
+                <p style="font-size: 11px;">Ao se inscrever, você concorda com os <a href="">Termos de Serviço</a><br> e a <a href="">Política de Privacidade</a>, incluindo o <a href="">Uso de Cookies</a>.</p>
+            </div>
+            
+            </div>
+    
+        </div>
+
+    </div>
+
+    
+    <script type="text/javascript">
+
+        document.getElementById("registerButtonHome").onclick = function () {
+            modalRegister.style.display= "flex";
+            overflowMedia.style.overflow= "hidden";
+        };
+
+        document.getElementById("loginButtonHome").onclick = function () {
+            modalLogin.style.display= "flex";
+            overflowMedia.style.overflow= "hidden";
+        };
+
+        document.getElementById("backButtonLogin").onclick = function () {
+            modalLogin.style.display="none";
+            overflowMedia.style.overflow= "auto";
+        };
+        document.getElementById("backButtonRegister").onclick = function () {
+            modalRegister.style.display="none";
+            overflowMedia.style.overflow= "auto";
+
+        };
+        document.getElementById("registerLoginLink").onclick = function () {
+            modalLogin.style.display="none";
+            modalRegister.style.display="flex";
+            overflowMedia.style.overflow= "hidden";
+        };
+
+
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#userPassword');
+        const toggleValidationPasswor = document.querySelector('#toggleValidationPassword');
+        const passwordValidation = document.querySelector('#userValidationPassword');
+        
+        togglePassword.addEventListener('click', function (e) {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+
+        toggleValidationPasswor.addEventListener('click', function (e) {
+            const type = passwordValidation.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordValidation.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+            });
+
+        const togglePasswordLogin = document.querySelector('#togglePasswordLogin');
+        const passwordLogin = document.querySelector('#userSenhaLogin');
+        
+        togglePasswordLogin.addEventListener('click', function (e) {
+            const type = passwordLogin.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordLogin.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+
+
+    </script>
+</body>
+</html>
