@@ -94,26 +94,27 @@
             <p>Crie sua conta do Twitok</p>
     
             <div class="formUser">
-            <label for="userUsername">Nome de usuário</label>
-            <input id="userUsername" type="text" name="usernameForm:user" class="formControl" placeholder="Digite seu nome de usuário">
-            <label for="userEmail">Email</label>
-            <input id="userEmail" type="text" name="emailForm:user" class="formControl" placeholder="Digite seu email">
-            <label for="userPassword">Senha</label>
-                <div style="display: flex; flex-direction: row;">
-                    <input id="userPassword" type="password" name="passwordForm:user" class="formControl" placeholder="Digite sua senha">
-                    <i class="far fa-eye" id="togglePassword"></i>
-                </div>
-                
-                <div style="display: flex; flex-direction: row;">
-                     <input id="userValidationPassword" type="password" name="passwordValidationForm:user" class="formControl" placeholder="Confirme sua senha">
-                     <i class="far fa-eye" id="toggleValidationPassword"></i>
-                </div>
-    
-            <div id="buttonsRegisterBox">
-                <button id="registerButton" type="button">Inscreva-se</button>
-                <p style="font-size: 11px;">Ao se inscrever, você concorda com os <a href="">Termos de Serviço</a><br> e a <a href="">Política de Privacidade</a>, incluindo o <a href="">Uso de Cookies</a>.</p>
-            </div>
+                <form action="/users" method="POST">
+                    <label for="userUsernameRegister">Nome de usuário</label>
+                    <input id="userUsernameRegister" type="text" name="usernameForm:user" class="formControl" placeholder="Digite seu nome de usuário">
+                    <label for="userEmailRegister">Email</label>
+                    <input id="userEmailRegister" type="text" name="emailForm:user" class="formControl" placeholder="Digite seu email">
+                    <label for="userPasswordRegister">Senha</label>
+                        <div style="display: flex; flex-direction: row;">
+                            <input id="userPasswordRegister" type="password" name="passwordForm:user" class="formControl" placeholder="Digite sua senha">
+                            <i class="far fa-eye" id="togglePassword"></i>
+                        </div>
+                        
+                        <div style="display: flex; flex-direction: row;">
+                            <input id="userValidationPassword" type="password" class="formControl" placeholder="Confirme sua senha">
+                            <i class="far fa-eye" id="toggleValidationPassword"></i>
+                        </div>
             
+                    <div id="buttonsRegisterBox">
+                        <button id="registerButton" type="submit">Inscreva-se</button>
+                        <p style="font-size: 11px;">Ao se inscrever, você concorda com os <a href="">Termos de Serviço</a><br> e a <a href="">Política de Privacidade</a>, incluindo o <a href="">Uso de Cookies</a>.</p>
+                    </div>
+                </form>
             </div>
     
         </div>
@@ -140,7 +141,10 @@
         document.getElementById("backButtonRegister").onclick = function () {
             modalRegister.style.display="none";
             overflowMedia.style.overflow= "auto";
-
+            document.getElementById("userUsernameRegister").value='';
+            document.getElementById("userEmailRegister").value='';
+            document.getElementById("userPasswordRegister").value='';
+            document.getElementById("userValidationPassword").value='';
         };
         document.getElementById("registerLoginLink").onclick = function () {
             modalLogin.style.display="none";
@@ -150,7 +154,7 @@
 
 
         const togglePassword = document.querySelector('#togglePassword');
-        const password = document.querySelector('#userPassword');
+        const password = document.querySelector('#userPasswordRegister');
         const toggleValidationPasswor = document.querySelector('#toggleValidationPassword');
         const passwordValidation = document.querySelector('#userValidationPassword');
         
