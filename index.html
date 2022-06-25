@@ -94,7 +94,7 @@
             <p>Crie sua conta do Twitok</p>
     
             <div class="formUser">
-                <form action="/users" method="POST">
+                <form action="/users" method="POST" onsubmit="return checkPasswordValidation(event)">
                     <label for="userUsernameRegister">Nome de usuário</label>
                     <input id="userUsernameRegister" type="text" name="usernameForm:user" class="formControl" placeholder="Digite seu nome de usuário">
                     <label for="userEmailRegister">Email</label>
@@ -178,6 +178,28 @@
             passwordLogin.setAttribute('type', type);
             this.classList.toggle('fa-eye-slash');
         });
+
+        function checkPasswordValidation(event){
+                    const password1 = document.querySelector("#userPasswordRegister").value;
+                    const password2 = document.querySelector("#userValidationPassword").value;
+                    const username = document.querySelector("#userUsernameRegister").value;
+                    const emailUser = document.querySelector("#userEmailRegister").value;
+
+                    if(password1 === "" || password2 === "" || username === "" || emailUser === ""){
+                        alert("Preencha todos os campos");
+                        return false;
+                        event.preventDefault();
+
+                    }  else if(password1 != password2){
+                        alert("Senhas não conferem");
+                        return false;
+                        event.preventDefault();
+                    } else {
+                        return true;
+                    }
+
+                    
+                }
 
 
     </script>
