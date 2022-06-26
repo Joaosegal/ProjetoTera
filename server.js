@@ -20,7 +20,8 @@ MongoClient.connect(uri, { useUnifiedTopology: true })
         app.post('/users', async (req, res) => {
             const {username, password} = req.body;
             const existUsername = await usersCollection.findOne({username: req.body.username})
-            if (!existUsername){
+            const existEmail = await usersCollection.findOne({email: req.body.email})
+            if (!existUsername && !existEmail){
                 usersCollection.insertOne(req.body)
                 .then(result =>{
                     res.redirect('/')
@@ -28,7 +29,7 @@ MongoClient.connect(uri, { useUnifiedTopology: true })
                 .catch(error => console.error(error))
             } else {
                 return res.status(400).json({
-                    message: "Usuário já cadastrado"
+                    message: "Usuário/Email já cadastrado"
                });
             }
         })
