@@ -17,12 +17,20 @@ MongoClient.connect(uri, { useUnifiedTopology: true })
         
         app.use(bodyParser.urlencoded({ extended: true}))
         
-        app.post('/users', (req, res) => {
-            usersCollection.insertOne(req.body)
-            .then(result =>{
-                res.redirect('/')
-            })
-            .catch(error => console.error(error))
+        app.post('/users', async (req, res) => {
+            const {username, password} = req.body;
+            const existUsername = await usersCollection.findOne({username: req.body.username})
+            if (!existUsername){
+                usersCollection.insertOne(req.body)
+                .then(result =>{
+                    res.redirect('/')
+                })
+                .catch(error => console.error(error))
+            } else {
+                return res.status(400).json({
+                    message: "Usuário já cadastrado"
+               });
+            }
         })
         
         app.use('/css', express.static('css'));
