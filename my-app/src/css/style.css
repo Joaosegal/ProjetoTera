@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto:wght@300;700&display=swap');
+
+body{
+    margin: 0;
+    height: auto;
+    width: 100%;
+}
+
+.containerImg{
+    font-size: 0px;
+    min-height: 100vh;
+}
+
+.imgLogin{
+    height: 100%;
+    width: 60vw;
+}
+
+.logoImg{
+    filter: invert(44%) sepia(79%) saturate(784%) hue-rotate(154deg) brightness(97%) contrast(102%);
+    width: 62px;
+}
+
+.containerLogin{
+    height: auto;
+    width: 100%;
+    padding: 30px;
+    font-family: "Roboto";
+    text-align: left;
+}
+
+
+h1{
+    font-size: 40px;
+    margin-bottom: 5vh;
+}
+
+h2{
+    font-size: 30px;
+    margin-bottom: 8.5vh;
+}
+
+.buttonsLoginBoxHome{
+    margin-top: 10vh;
+    width: 300px;
+}
+
+.buttonsRegisterBoxHome{
+    width: 300px;
+}
+
+.buttonsRegisterBoxHome p a:link, a:visited, a:hover, a:focus, a:active{
+    color: #1d9bf0;
+  }
+
+.registerButtonHome{
+    border-radius: 9999px;
+    background-color: #1d9bf0;
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+
+.registerButtonHome:hover{
+    background: #1a8cd8;
+}
+
+.loginButtonHome{
+    border-radius: 9999px;
+    background-color: white;
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    color: #1d9bf0;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid rgb(207, 217, 222) ;
+}
+
+.loginButtonHome:hover{
+    background: #e8f5fd;
+}
+
+@media (max-width: 768px) {
+    .containerImg{
+    display: none;
+    }
+    .buttonsCenter{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+}
+
+.modalRegister{
+    justify-content: center;
+    align-items: center; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.boxModal{
+    border-radius: 16px;
+    width: 400px;
+    height: 650px;
+    background-color: white;
+    position: absolute;
+    margin-left: 41vw;
+    top: 2vh;
+}
+
+
+.boxModal p{
+    text-align: center;
+    font-family: "Roboto";
+    margin-bottom: 3vh;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.backBox{
+    padding: 15px;
+    width: 30px;
+}
+
+.backButton{
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    background: none;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    font-family: "Roboto";
+    font-weight: bolder;
+    outline: none;
+}
+
+.backButton:hover{
+    padding: 0;
+    border: 1px solid;
+    background: none;
+    border-radius: 999px;
+}
+
+.imgLogoBox{
+    padding-top: 20px;
+    margin-left: 115px;
+}
+
+.modalRegister #formControl{
+    width:292px;
+    height: 40px;
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.modalRegister #buttonsRegisterBox{
+    width: 300px;
+    height: auto;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.modalRegister #buttonsRegisterBox p a{
+    text-decoration: none;
+}
+
+.modalRegister .buttonsRegisterBox p a:link, a:visited, a:hover, a:focus, a:active{
+    color: #1d9bf0;
+  }
+
+.modalRegister .registerButton{
+    border-radius: 9999px;
+    background-color: #1d9bf0;
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+
+.modalRegister .registerButton:hover{
+    background: #1a8cd8;
+}
+
+.modalRegister i{
+    margin-top: 22px;
+    height: 20px;
+    margin-left: -30px;
+    cursor: pointer;
+}
+
+.modalLogin{
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+
+.modalLogin h1{
+    text-align: center;
+    font-family: "Roboto";
+    margin-bottom: 20px;
+}
+
+.formUser{
+    padding: 15px;
+    padding-left: 30px;
+    font-family: "Roboto";
+    font-size: 20px;
+    width: 301px;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.modalLogin #formControl{
+    width:292px;
+    height: 40px;
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.buttonsLoginBox{
+    width: 400px;
+    height: auto;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.buttonsLoginBox p a{
+    text-decoration: none;
+}
+
+.buttonsLoginBox p a:link, a:visited, a:hover, a:focus, a:active{
+    color: #1d9bf0;
+  }
+
+.loginButton{
+    border-radius: 9999px;
+    background-color: #1d9bf0;
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+
+.registerButton:hover{
+    background: #1a8cd8;
+}
+
+.modalLogin i{
+    margin-top: 22px;
+    height: 20px;
+    margin-left: -30px;
+    cursor: pointer;
+}
+
+.buttonsRegisterBox {
+    padding-top: 15px;
+}
