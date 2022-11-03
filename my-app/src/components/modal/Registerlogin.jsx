@@ -34,7 +34,7 @@ export default class RegisterLogin extends Component {
         if (data.status == "ok") {
           alert("login realizado")
           window.localStorage.setItem("token", data.data)
-          window.location.href="./UserDetail"
+          window.location.href="./Feed"
         }
       })
   }
@@ -42,7 +42,7 @@ export default class RegisterLogin extends Component {
     return (
     <div className="modalLogin">
         <div className="boxModal" style={{ flexDirection: 'column' }}>
-          <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <div style={{ display: 'flex', flexDirection: 'row', marginLeft:'5%' }}>
             <div className="backBox">
             <Link to="/">
               <button className="backButtonLogin" id="backButton" type="button">X</button>

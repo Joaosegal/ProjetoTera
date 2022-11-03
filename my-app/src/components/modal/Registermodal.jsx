@@ -39,7 +39,7 @@ export default class Register extends Component {
     return (
       <div className="modalRegister" >
       <div className="boxModal" style={{flexDirection: 'column'}}>
-        <div style={{display: 'flex', flexDirection: 'row'}}>
+        <div style={{display: 'flex', flexDirection: 'row', marginLeft:'5%'}}>
           <div className="backBox">
           <Link to="/">
             <button className="backButtonRegister" id="backButton" type="button">X</button>
@@ -60,13 +60,9 @@ export default class Register extends Component {
             <input className="userPassword" type="password" name="passwordForm:user" id="formControl" placeholder="Digite sua senha" onChange={(e)=> this.setState({password:e.target.value})}/>
             <i className="far fa-eye" id="togglePassword" />
           </div>
-          <div style={{display: 'flex', flexDirection: 'row'}}>
-            <input className="userValidationPassword" type="password" name="passwordValidationForm:user" id="formControl" placeholder="Confirme sua senha" />
-            <i className="far fa-eye" id="toggleValidationPassword" />
-          </div>
           <div className="buttonsRegisterBox">
             <button className="registerButton" type="button" onClick={this.handleSubmit}>Inscreva-se</button>
-            <p style={{fontSize: '11px'}}>Ao se inscrever, você concorda com os <a href>Termos de Serviço</a><br /> e a <a href>Política de Privacidade</a>, incluindo o <a href>Uso de Cookies</a>.</p>
+            <p style={{fontSize: '11px', width: '300px', marginTop:'10%'}}>Ao se inscrever, você concorda com os <a href>Termos de Serviço</a><br /> e a <a href>Política de Privacidade</a>, incluindo o <a href>Uso de Cookies</a>.</p>
           </div>
         </div>
       </div>

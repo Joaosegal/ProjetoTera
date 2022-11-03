@@ -29,13 +29,24 @@
   .cabeçalho-menu-navegaçao{
   }
   
+  .userTitle{
+    padding-left: 20px;
+    margin-bottom: 0px;
+  }
   
-    
+  .flexbox{
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  .post{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
   
   .cabeçalho-menu-lista{
     list-style-type: none;
-  
-  
+    margin-left: 20px;
   }
   
   .cabeçalho-menu-item{
@@ -49,6 +60,13 @@
   }
   
   .cabeçalho-menu-item a{
+    text-decoration: none;
+    font-size:22px;
+    color: black;
+    vertical-align: top;
+  }
+
+  .cabeçalho-menu-item p{
     text-decoration: none;
     font-size:22px;
     color: black;
@@ -98,13 +116,47 @@
     filter: invert(44%) sepia(79%) saturate(784%) hue-rotate(154deg) brightness(97%) contrast(102%);
     transform-origin: 0px 0px;
     right: 100px;
+    margin-top: 20px;
+    margin-left: 20px;
   }
   
   .conteudo-principal-feed{
     text-align: left;
   }
     
-  
+  .deleteButton{
+    margin-left: 35%;
+    width: auto;
+    height: 40px;
+    padding: 10px;
+    background: white;
+    border: solid 1px #1da1f2;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+
+  .editButton{
+    margin-left: 5%;
+    width: auto;
+    height: 40px;
+    padding: 10px;
+    background: white;
+    border: solid 1px #1da1f2;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+
+  .doneEditButton{
+    margin-left: 5%;
+    width: auto;
+    height: 40px;
+    padding: 10px;
+    background: white;
+    border: solid 1px #1da1f2;
+    border-radius: 15px;
+    cursor: pointer;
+    display: none;
+  }
   
   .conteudo-principal-lista-twitoks{
     display: flex;
@@ -121,8 +173,9 @@
   }
   
   
-  .twitok-conteudo{
+  .twitok_conteudo{
     margin-left: 15px;
+    margin-top: 15px;
   }
   
   .twitok-conteudo h2{

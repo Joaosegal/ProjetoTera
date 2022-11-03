@@ -22,7 +22,9 @@ mongoose.connect(mongoUrl, {
 }).catch((e) => console.log(e))
 
 require("./userDetails")
+require("./userPost")
 const User = mongoose.model("UserInfo")
+const Post = mongoose.model("UserPost")
 
 app.post("/register",async(req,res)=>{
     const {username, email, password} = req.body;
@@ -78,5 +80,40 @@ app.post("/userData", async (req,res) => {
         
     } catch (error) {
         
+    } 
+})
+
+app.post("/post",async(req,res)=>{
+    const {idUser, postContent, username} = req.body;
+    try{
+        await Post.create({
+            idUser,
+            username,
+            postContent
+        })
+        res.send({status:"ok"})
+    } catch(error) {
+        res.send({status: error})
     }
 })
+
+app.get('/getUsers', (request, response) => {
+    Post.find()
+    .then(data => response.json(data))
+    .catch(error => response.json(error))
+})
+
+app.delete('/delete/:id', async (req, res) => {
+    await Post.deleteOne({_id: req.params.id})
+  });
+
+app.patch("/post/:id", async (req, res) => {
+    Post.findByIdAndUpdate(req.params.id, req.body, {new: true}).then((data) => {
+        if (!data) {
+            return res.status(404).send();
+        }
+        res.send(data);
+    }).catch((error) => {
+        res.status(500).send(error);
+    })
+});
