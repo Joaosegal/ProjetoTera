@@ -17,7 +17,7 @@ export default class Register extends Component {
     e.preventDefault();
     const { username, email, password} = this.state;
     console.log(username, email, password)
-    fetch("http://localhost:3000/register", {
+    fetch("https://twitok.vercel.app/register", {
       method:"POST",
       crossDomain:true,
       headers: {

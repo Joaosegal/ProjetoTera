@@ -8,7 +8,7 @@ export default class UserDetail extends Component {
         }
     }
     componentDidMount(){
-        fetch("http://localhost:3000/userData", {
+        fetch("https://twitok.vercel.app/userData", {
         method:"POST",
         crossDomain:true,
         headers: {

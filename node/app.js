@@ -11,7 +11,7 @@ const JWT_SECRET = "fpqowijfqwoifjqwop1039812301980391283"
 
 const mongoUrl = "mongodb+srv://joaosegal:joao1010@cluster0.bxlmkha.mongodb.net/myFirstDatabase" 
 
-app.listen(5000,() => {
+app.listen(3000,() => {
     console.log("Server Started")
 })
 

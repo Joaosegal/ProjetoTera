@@ -26,7 +26,7 @@ export default class Feed extends Component {
   this.confirmEditPost= this.confirmEditPost.bind(this)
 }
 componentDidMount(){
-    fetch("http://localhost:3000/userData", {
+    fetch("https://twitok.vercel.app/userData", {
     method:"POST",
     crossDomain:true,
     headers: {
@@ -43,7 +43,7 @@ componentDidMount(){
         this.setState({idUser: data.data._id})
         this.setState({username: data.data.username})
     })
-    fetch("http://localhost:3000/getUsers", {
+    fetch("https://twitok.vercel.app/getUsers", {
     method:"GET",
     crossDomain:true,
     headers: {
@@ -60,7 +60,7 @@ componentDidMount(){
 registerPost(e){
   e.preventDefault();
   const {idUser, postContent, username, totalPosts} = this.state;
-  fetch("http://localhost:3000/post", {
+  fetch("https://twitok.vercel.app/post", {
     method:"POST",
     crossDomain:true,
     headers: {
@@ -82,7 +82,7 @@ registerPost(e){
 deletePost(e){
   e.preventDefault();
   const _id = e.target.getAttribute('title')
-  fetch(`http://localhost:3000/delete/${_id}`, {
+  fetch(`https://twitok.vercel.app/delete/${_id}`, {
     method:"DELETE",
     crossDomain:true,
     headers: {
@@ -90,9 +90,12 @@ deletePost(e){
       Accept: "application/json",
       "Access-Control-Allow-Origin": "*"
     },
-  }).then((res) => res.json(), window.location.reload(false))
+  }).then((res) => res.json())
     .then((data) => {
       console.log(data, "postRegistered")
+      window.location.reload(false)
+    }).catch((err) => {
+      window.location.reload(false)
     })
 }
 editPost(e){
@@ -115,7 +118,7 @@ confirmEditPost(e){
   postEdit.style.backgroundColor = "white"
   doneButton.style.display = "none"
   const postContent =  post.innerHTML
-  fetch(`http://localhost:3000/post/${_id}`, {
+  fetch(`https://twitok.vercel.app/post/${_id}`, {
     method:"PATCH",
     crossDomain:true,
     headers: {
@@ -128,9 +131,10 @@ confirmEditPost(e){
       username,
       postContent
     })
-  }).then((res) => res.json(), window.location.reload(false))
+  }).then((res) => res.json())
     .then((data) => {
       console.log(data, "postRegistered")
+      window.location.reload(false)
     })
 }
 
