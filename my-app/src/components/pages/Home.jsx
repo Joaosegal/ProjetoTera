@@ -15,7 +15,7 @@ function Home() {
           <img src={logoBorboleta} className="logoImg" alt="logo borboleta" />
         </div>
         <div>
-          <h1>Fique por dentro de tudo que está acontecendo no mundo</h1>
+          <h1 style={{ marginTop: '20px' }}>Fique por dentro de tudo que está acontecendo no mundo</h1>
           <h2>Inscreva-se no Twitok agora mesmo.</h2>
         </div>
         <div className="buttonsCenter">
@@ -23,10 +23,10 @@ function Home() {
           <Link to="/register">
             <button className="registerButtonHome" type="button">Inscreva-se</button>
           </Link>
-            <p style={{ fontSize: '11px' }}>Ao se inscrever, você concorda com os <a href>Termos de Serviço</a> e a <a href>Política de Privacidade</a>, incluindo o <a href>Uso de Cookies</a>.</p>
+            <p style={{ fontSize: '11px', marginTop: '20px' }}>Ao se inscrever, você concorda com os <a href>Termos de Serviço</a> e a <a href>Política de Privacidade</a>, incluindo o <a href>Uso de Cookies</a>.</p>
           </div>
           <div className="buttonsLoginBoxHome">
-            <p style={{ fontSize: 'larger' }}><b>Já tem uma conta?</b></p>
+            <p style={{ fontSize: 'larger', marginBottom: '20px' }}><b>Já tem uma conta?</b></p>
             <Link to="/login">
             <button className="loginButtonHome" type="button">Entrar</button>
             </Link>
