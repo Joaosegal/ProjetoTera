@@ -16,6 +16,7 @@ export default class Register extends Component {
   handleSubmit(e){
     e.preventDefault();
     const { username, email, password} = this.state;
+    if (username != "" && email != "" && password != ""){
     fetch("https://twitok.vercel.app/register", {
       method:"POST",
       crossDomain:true,
@@ -39,6 +40,9 @@ export default class Register extends Component {
           alert('Email ou Usuário indisponiveis')
         }
       })
+    } else {
+      alert('Preencha todos os campos')
+    }
   }
   render() {
     return (
