@@ -13,9 +13,7 @@ export default class RegisterLogin extends Component {
     this.handleSubmit= this.handleSubmit.bind(this)
   }
   handleSubmit(e){
-    e.preventDefault();
     const { username, password} = this.state;
-    console.log(username, password)
     fetch("https://twitok.vercel.app/login", {
       method:"POST",
       crossDomain:true,
@@ -30,11 +28,12 @@ export default class RegisterLogin extends Component {
       })
     }).then((res) => res.json())
       .then((data) => {
-        console.log(data, "userRegister")
         if (data.status == "ok") {
           alert("login realizado")
           window.localStorage.setItem("token", data.data)
           window.location.href="./Feed"
+        } else if (data.erro == "User Not Found") {
+          alert('Email ou Usuário incorretos')
         }
       })
   }
